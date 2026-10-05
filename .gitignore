@@ -89,3 +89,9 @@ CodeObfuscation/ObfuscarTarget/*
 
 # ...但最终保留 config.xml
 !CodeObfuscation/ObfuscarTarget/config.xml
+
+# Local-only toolchain parts (rebuilt by .tools/Restore-LocalSetup.ps1)
+/.tools/ReferenceAssemblies/
+/.tools/Data/
+/.tools/RimDevTools.exe
+/参考文档/

@@ -39,6 +39,8 @@ public static class DotNetBuildEnvironmentInspector
         var sdks = dotnet is null ? [] : ReadSdks(dotnet);
         var candidates = new[]
         {
+            // Local setups can ship reference assemblies and point FrameworkPathOverride at them.
+            Environment.GetEnvironmentVariable("FrameworkPathOverride") ?? "",
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Reference Assemblies", "Microsoft", "Framework", ".NETFramework", "v4.8"),
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Reference Assemblies", "Microsoft", "Framework", ".NETFramework", "v4.7.2"),
             Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "Reference Assemblies", "Microsoft", "Framework", ".NETFramework", "v4.8"),
